@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using System.Xml.XPath;
+
+Console.WriteLine("Hello, World!");
 
 //Задача 1: Задайте двумерный массив символов (тип char [,]). Создать строку из символов этого массива.
 char[,] CreateMatrix(int len){
@@ -52,7 +54,37 @@ void PrintString(string str){
     for (int i=0; i<str.Length;i++){
         Console.Write(str[i]+" ");   
     }
-    
 }
 
-Zadanie1();
+//Zadanie1();
+
+//Задача 2: Задайте строку, содержащую латинские буквы в обоих регистрах. Сформируйте строку, в которой
+//все заглавные буквы заменены на строчные.
+
+string CreateString(){
+    string str = string.Empty;
+    str = Console.ReadLine();
+    return str;
+}
+
+string UpperToLower(string str){
+    string result = string.Empty;
+    foreach (var c in str)
+            {
+                if (char.IsUpper(c))
+                    result += char.ToLower(c);
+                else
+                    result += c;
+            }
+    return result;
+}
+
+void Zadanie2(){
+    Console.WriteLine("Please, write someone tokens different case: ");
+    string str = CreateString();
+    Console.WriteLine();
+    Console.WriteLine("Your tokens after: ");
+    Console.WriteLine(UpperToLower(str));
+}
+
+Zadanie2();
